@@ -1,0 +1,51 @@
+.div_header{
+    display: flex;
+
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(51, 255, 0);
+}
+.body_app{
+    display: flex;
+    margin: 10px;
+    gap: 15px;
+    height: 80vh;
+}
+.div_menu{
+    background-color: blue;
+
+    display: flex;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    
+    width: 10%;
+    
+}
+    
+.div_tarefa{
+    display: flex;
+    justify-content: center;
+    
+   
+    background-color: blueviolet;
+    width: 70%;
+}
+.div_soma{
+    background-color: brown;
+    display: flex;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    
+    width: 20%;
+}
+
+.footer{
+    background-color: coral;
+    height: 5vh;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+}
