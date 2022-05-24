@@ -8,6 +8,7 @@ const Task = () => {
     const [nomeTarefa, setNomeTarefa] = useState("")
     const [nomeEmpresa, setNomeEmpresa] = useState("");
     const [comentario, setComentario] = useState("");
+    const [tarefa, setTarefa] = useState("")
     
     const handleTarefa =(e)=>{
         e.presentDefault();
@@ -17,6 +18,11 @@ const Task = () => {
     const handleEmpresa =(e)=>{
         e.presentDefault();
         setNomeEmpresa(e.target.value)
+    }
+
+    const res =()=>{
+        setTarefa(nomeEmpresa)
+                    
     }
 
   return (
@@ -42,7 +48,8 @@ const Task = () => {
                 <option value="empresa6">Empresa6</option>
             </select>
         </label>
-
+        <button type="submit" onClick={res}>Salvar!</button>
+        <h1>{tarefa}</h1>
     </div>
   )
 }

@@ -10,8 +10,7 @@ const painel = () => {
     <div>
         <header >
             <div className={styles.div_header} >
-                <MenuSuperior/>
-                
+                <MenuSuperior/>                
             </div>
         </header>
         <body className={styles.body_app}>
@@ -33,31 +32,7 @@ const painel = () => {
     </div>
         
     )
-}
-{/* 
-        <header className={styles.div_header}>
-            <div >
-                <MenuSuperior/>
-                <h1>Alexandre</h1>
-            </div>
-        </header>
-        <body>
-            <div className='div_menu'>
-                <Menu/>
-            </div>
-            <div className='div_tarefa'>
-                <Tarefa/>
-            </div>
-            <div className='div_soma'>
-                <Somar/>
-            </div>
-        </body>
-        <footer>
-            <div className='footer'>
-               <Rodape/>
-            </div> 
-        </footer> */}
-      
+}     
 
 
 export default painel
