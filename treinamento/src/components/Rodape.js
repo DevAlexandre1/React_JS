@@ -15,9 +15,6 @@ const addTask=()=>{
     <div className={styles.rodape}>
      <input type="text" />
      <button onClick={addTask} type="submit">Add task</button>
-
-
-
      <Task tarefas={task}/>
     </div>
   )
