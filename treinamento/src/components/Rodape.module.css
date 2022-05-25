@@ -1,0 +1,8 @@
+.rodape{
+    background-color: rgb(122, 165, 245);
+    height: 40vh;
+}
+
+.tasks{
+    display: flex;
+}

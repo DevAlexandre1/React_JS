@@ -15,9 +15,9 @@ console.log(btnMenu)
 
   return (
     <div className="App">
-      {/* <Painel/> */}
-      <h1>Testando</h1>
-      <button onClick={btnOnClick}>Clique aqui</button>
+      <Painel/>
+      {/* <h1>Testando</h1>
+      <button onClick={btnOnClick}>Clique aqui</button> */}
 
     </div>
   );

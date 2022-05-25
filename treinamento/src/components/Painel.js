@@ -18,7 +18,7 @@ const painel = () => {
                 <Menu/>
             </div>
             <div className={styles.div_tarefa}>
-                <Tarefa/>
+                
             </div>
             <div className={styles.div_soma}>
                 <Somar/>
@@ -26,7 +26,7 @@ const painel = () => {
         </body>
         <footer>
             <div className={styles.footer}>
-               <Rodape/>
+                 <Rodape/>
             </div> 
         </footer> 
     </div>

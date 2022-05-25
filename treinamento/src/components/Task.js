@@ -1,14 +1,13 @@
 import { useState } from "react"
+import styles from './Task.module.css'
 
+const Task = (props) => {
+    const {tarefas} = props;
     
-
-
-const Task = () => {
-    // const userName = "Alexandre";
     const [nomeTarefa, setNomeTarefa] = useState("")
     const [nomeEmpresa, setNomeEmpresa] = useState("");
     const [comentario, setComentario] = useState("");
-    const [tarefa, setTarefa] = useState("")
+    
     
     const handleTarefa =(e)=>{
         e.presentDefault();
@@ -21,37 +20,38 @@ const Task = () => {
     }
 
     const res =()=>{
-        setTarefa(nomeEmpresa)
-                    
+        setNomeTarefa(nomeEmpresa)
+        console.log("Tarefa finalizada!")
     }
 
   return (
-    <div>
-        <h1>Tarefa</h1>
-        <label>
-            <span>Escolha a tarefa:</span>
-            <input type="text" onChange={handleTarefa}/>
-        </label>
-        
-        <label>
-            <span>Comentario:</span>
-            <textarea  name="comentario" onChange={(e)=>setComentario(e.target.value)} value={comentario}></textarea >
-        </label>
-        <label>
-            <span>Selecione a empresa:</span>
-            <select name="Empresas" id="empresas" onChange={handleEmpresa}>
-                <option value="empresa1">Empresa1</option>
-                <option value="empresa2">Empresa2</option>
-                <option value="empresa3">Empresa3</option>
-                <option value="empresa4">Empresa4</option>
-                <option value="empresa5">Empresa5</option>
-                <option value="empresa6">Empresa6</option>
-            </select>
-        </label>
-        <button type="submit" onClick={res}>Salvar!</button>
-        <h1>{tarefa}</h1>
-    </div>
-  )
-}
+    <div  className={styles.container_task}>
+      {tarefas.map(task => {
+          return (            
+              <div className={styles.task}>                  
+                  <h1>Tarefa</h1>
+                  <span>Escolha a tarefa:</span>
+                          <input type="text" onChange={handleTarefa}/>
+                        
+                        <span>Comentario:</span>
+                        <textarea  name="comentario" onChange={(e)=>setComentario(e.target.value)} value={comentario}></textarea >
 
+                        <span>Selecione a empresa:</span>
+                        <select name="Empresas" id="empresas" onChange={handleEmpresa}>
+                            <option value="empresa1">Empresa1</option>
+                            <option value="empresa2">Empresa2</option>
+                            <option value="empresa3">Empresa3</option>
+                            <option value="empresa4">Empresa4</option>
+                            <option value="empresa5">Empresa5</option>
+                            <option value="empresa6">Empresa6</option>
+                        </select>
+
+                        <button  onClick={res} type="submit">Finalizar tarefa</button>
+
+              </div>
+          );
+      })}
+    </div>
+  );
+}
 export default Task

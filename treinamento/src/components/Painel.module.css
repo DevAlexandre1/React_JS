@@ -9,7 +9,7 @@
     display: flex;
     margin: 10px;
     gap: 15px;
-    height: 80vh;
+    height: 60vh;
 }
 .div_menu{
     background-color: blue;
@@ -41,11 +41,11 @@
     width: 20%;
 }
 
-.footer{
+/* .footer{
     background-color: coral;
-    height: 5vh;
+    height: 25vh;
     display: flex;
     text-align: center;
     justify-content: center;
     align-content: center;
-}
+} */

@@ -1,14 +1,1 @@
 
-
-h1, label, input, p {
-    display: flex;
-    align-content: center;
-    text-align: center;
-    justify-content: center;
-    margin: 5px;
-    color: blue;
-   font-size:   larger
-    
-
-}
-
