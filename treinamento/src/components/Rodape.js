@@ -6,16 +6,22 @@ import Task from './Task'
 
 const Rodape = () => {
 
-const [task, setTask] = useState([]);
+const [task, setTask] = useState([
+  {id:1,usuario:"", data: "", tarefa:"", empresa:"", comentario:""}]);
 
 const addTask=()=>{
-  setTask([...task,1]);
+  // const {usuario, data, tarefa, empresa, comentario} = tarefasprops
+  setTask([...task,{usuario:"", data: "", tarefa:"", empresa:"", comentario:""}]);
 }
+
+
+
+
   return (
     <div className={styles.rodape}>
      <input type="text" />
-     <button onClick={addTask} type="submit">Add task</button>
-     <Task tarefas={task}/>
+     <button onClick={addTask} type="submit">Add task</button>     
+     {<Task tarefas={task}/> }
     </div>
   )
 }

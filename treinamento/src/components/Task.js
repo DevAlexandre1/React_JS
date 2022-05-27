@@ -15,11 +15,18 @@ const Task = (props) => {
     const handleTarefa =(e)=>{
         e.presentDefault();
         setNomeTarefa(e.target.value)
+        
+        
     }
 
     const handleEmpresa =(e)=>{
         e.presentDefault();
         setNomeEmpresa(e.target.value)
+    }
+
+    const handleComentario =(e)=>{
+        e.presentDefault();
+        setComentario(e.target.value)
     }
 
     const res =()=>{
@@ -29,6 +36,7 @@ const Task = (props) => {
 
     const handleBtnIniciar =()=>{
         setBtnIniciar(!btnIniciar)
+
       
              
         console.log("Iniciou?",btnIniciar)
@@ -76,7 +84,7 @@ const Task = (props) => {
                             <option value="empresa6">Empresa6</option>
                         </select>
                         <span>Comentario:</span>
-                        <textarea  name="comentario" onChange={(e)=>setComentario(e.target.value)} value={comentario}></textarea >
+                        <textarea  name="comentario" onChange={handleComentario} value={comentario}></textarea >
 
                         <button className={styles.btnIniciar} onClick={handleBtnIniciar}>Iniciar</button>
                         <button className={styles.btnParar} onClick={handleBtnParar}>Parar</button>
