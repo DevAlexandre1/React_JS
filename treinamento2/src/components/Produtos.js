@@ -1,10 +1,16 @@
 import React from 'react'
 
-const Produtos = (garagem) => {
+const Produtos = ({carros}) => {
+
+
   return (
     <div>
-        <h1>Produto: {garagem.modelo}</h1>
-        <h1>Valor: R${garagem.valor}</h1>
+        <h1>Produto:</h1>
+        
+        {carros.map((el, i)=>(
+              <li key={i}>Modelo: {el.modelo }  Valor: R${el.valor}</li>
+        ))}
+        
      
 
 
