@@ -24,10 +24,10 @@ const Task = (props) => {
         setNomeEmpresa(e.target.value)
     }
 
-    const handleComentario =(e)=>{
-        e.presentDefault();
-        setComentario(e.target.value)
-    }
+    // const handleComentario =(e)=>{
+    //     e.presentDefault();
+    //     setComentario(e.target.value)
+    // }
 
     const res =()=>{
         setNomeTarefa(nomeEmpresa)
@@ -59,10 +59,10 @@ const Task = (props) => {
         console.log("Gravou?",btnGravar)
     }
   return (
-    <div  className={styles.container_task}>
-      {tarefas.map(task => {
+    <div id='tarefa_container'  className={styles.container_task}>
+      {tarefas.map((task, index) => {
           return (            
-              <div className={styles.task}>                  
+              <div key={index}  className={styles.task}>                  
                   
                   <span>Escolha a tarefa:</span>
                           
@@ -84,7 +84,8 @@ const Task = (props) => {
                             <option value="empresa6">Empresa6</option>
                         </select>
                         <span>Comentario:</span>
-                        <textarea  name="comentario" onChange={handleComentario} value={comentario}></textarea >
+
+                        <textarea name="comentario" id="comentario" cols="17" rows="2"></textarea>
 
                         <button className={styles.btnIniciar} onClick={handleBtnIniciar}>Iniciar</button>
                         <button className={styles.btnParar} onClick={handleBtnParar}>Parar</button>
