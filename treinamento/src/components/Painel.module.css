@@ -9,7 +9,7 @@
     display: flex;
     margin: 10px;
     gap: 15px;
-    height: 60vh;
+    height: 53vh;
 }
 .div_menu{
     background-color: blue;
@@ -26,8 +26,6 @@
 .div_tarefa{
     display: flex;
     justify-content: center;
-    
-   
     background-color: blueviolet;
     width: 70%;
 }
