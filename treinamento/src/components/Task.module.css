@@ -1,13 +1,12 @@
 .container_task{
     display: flex;
-    width: 220px;
+    width: 250px;
     height: 50px;
-   
-    
+       
 }
 
 .task{
-    width: 220px;
+    width: 250px;
     height: 270px;
     background-color: rgb(253,239,193);
     margin: 10px;
@@ -16,12 +15,24 @@
     text-align: center;
 
 }
-
-select{
+.tarefa{
     margin-top: 8px;
     margin-bottom: 8px;
-    width: 150px;
+    width: 205px;
 }
+
+.empresa{
+    margin-top: 8px;
+    margin-bottom: 8px;
+    width: 205px;
+}
+
+.comentario{
+    margin-top: 8px;
+    margin-bottom: 8px;
+    width: 205px;
+}
+
 
 .btnIniciar{
     margin-top: 4px;
