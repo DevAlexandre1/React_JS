@@ -55,13 +55,30 @@ const Task = (props) => {
     //     console.log("Tarefa finalizada!")
     // }
    
-
     const handleBtnIniciar =()=>{
+      
+      // const selectTarefa = document.querySelector("#tarefa")
+      // let valor = selectTarefa.options[selectTarefa.selectedIndex].text
+      // setTarefa0(valor)
+      // console.log(tarefa0)
+      
+      const getValor = document.querySelectorAll("#div_task select")
+      getValor.forEach(function(el,i){
         
-      const select = document.querySelector("#tarefa")
-      let valor = select.options[select.selectedIndex].text
-      setTarefa0(valor)
-      console.log(tarefa0)
+        let valor = []
+        let valArray = el.options[el.selectedIndex].text
+        let valor1 = [...valor,valArray]
+        console.log("------------------------------------------")
+        console.log("a["+i+"]"+valArray)
+        console.log(valor1)
+        console.log("------------------------------------------")
+        
+
+      })
+      // const select1 = document.querySelector("#tarefa[1]")
+      // let valor1 = select.options[select.selectedIndex].text
+      // setTarefa1(valor1)
+      // console.log(tarefa1)
       
       // setBtnIniciar(!btnIniciar)
         // console.log("Iniciou?",btnIniciar)
@@ -159,7 +176,7 @@ const Task = (props) => {
     <div id='tarefa_container'  className={styles.container_task}>        
       {tarefas.map((task, index) => {
           return (            
-              <div key={index}  className={styles.task}>     
+              <div id="div_task" key={index}  className={styles.task}>     
                   <span>Escolha a tarefa:</span>
                           <select className={styles.tarefa} name="Tarefa" id="tarefa" >
                                 <option value="tarefa1">Tarefa1</option>
