@@ -36,8 +36,6 @@ const Task = (props) => {
     // const tarefa00 = document.querySelector("")
 
     
-  
-
     // const handleEmpresa =(e)=>{
     //     // e.presentDefault();
     //     setEmpresa0(e.target[0].value)
@@ -59,11 +57,16 @@ const Task = (props) => {
       
       
       const verificarBtn =()=>{
-        const btnIniciar = document.querySelector("#btnIniciar")   
+        const quantidadeTarefas = document.querySelectorAll("#tarefa_container div")
+        const qtdTask = quantidadeTarefas.length
+        const container_tarefa = document.querySelector("#div_task")
+        const btnIniciar = container_tarefa.querySelectorAll("button")   
         const getValor = document.querySelectorAll("#div_task select")
         
-        switch (btnIniciar){
-                    case btnIniciar[0]:
+        for(let i = 0; i < qtdTask;i++){
+        let btn = (btnIniciar+i)
+          switch (btn){
+                    case (btn + 0):
                       //Set val task
                       let valor = getValor[0] .value
                       let valSelect = valor.options[valor.selectedIndex].text
@@ -74,12 +77,11 @@ const Task = (props) => {
                       let valorEmp = getValor[1] .value
                       let valSelectEmp = valorEmp.options[valorEmp.selectedIndex].text
                       setTarefa0(valSelectEmp)
-                      console.log(valSelectEmp)
-                        
+                      console.log(valSelectEmp)                        
 
                     break;
         
-                    case btnIniciar[1]:
+                    case (btn + 1):
                        //Set val task
                        let valor1 = getValor[2] .value
                        let valSelect1 = valor1.options[valor1.selectedIndex].text
@@ -93,7 +95,7 @@ const Task = (props) => {
                        console.log(valSelectEmp1)
                     break;
         
-                    case btnIniciar[2]:
+                    case (btn + 2):
                         //Set val task
                       let valor2 = getValor[4] .value
                       let valSelect2 = valor2.options[valor2.selectedIndex].text
@@ -105,7 +107,7 @@ const Task = (props) => {
                       setTarefa0(valSelectEmp2)
                     break;
         
-                    case btnIniciar[3]:
+                    case (btn + 3):
                         //Set val task
                       let valor3 = getValor[6] .value
                       let valSelect3 = valor3.options[valor3.selectedIndex].text
@@ -117,7 +119,7 @@ const Task = (props) => {
                       setTarefa0(valSelectEmp3)
                     break;
         
-                    case btnIniciar[4]:
+                    case (btn + 4):
                        //Set val task
                        let valor4 = getValor[8] .value
                        let valSelect4 = valor.options[valor4.selectedIndex].text
@@ -129,7 +131,7 @@ const Task = (props) => {
                        setTarefa0(valSelectEmp4)
                     break;
         
-                    case btnIniciar[5]:
+                    case (btn + 5):
                        //Set val task
                        let valor5 = getValor[10] .value
                        let valSelect5 = valor5.options[valor5.selectedIndex].text
@@ -142,22 +144,17 @@ const Task = (props) => {
                     break;
                     default:
                       console.log("Case não funcionou")
-          
-
         }
-
       }
+    }
     // }
       // const selectTarefa = document.querySelector("#tarefa")
       // let valor = selectTarefa.options[selectTarefa.selectedIndex].text
       // setTarefa0(valor)
       // console.log(tarefa0)
       
-
-
       //###########################################################################
-      
-      
+            
       //Codigo importante - pega todos os selects
       //const getValor = document.querySelectorAll("#div_task select")
 
@@ -172,7 +169,6 @@ const Task = (props) => {
       //   console.log("------------------------------------------")
         
     
-
         //###########################################################################
         
       // const select1 = document.querySelector("#tarefa[1]")
@@ -300,9 +296,9 @@ const Task = (props) => {
                         <span>Comentario:</span>
                         <textarea className={styles.comentario} name="comentario" id="comentario" cols="17" rows="2" ></textarea>
 
-                        <button id="btnIniciar" className={styles.btnIniciar} onClick={verificarBtn}>Iniciar</button>
-                        <button id="btnParar"  className={styles.btnParar} onClick={handleBtnParar}>Parar</button>
-                        <button id="btnGravar" className={styles.btnGravar} onClick={handleBtnGravar} type="submit">Gravar</button>
+                        <button id={"btnIniciar" + index} className={styles.btnIniciar} onClick={verificarBtn}>Iniciar</button>
+                        <button id={"btnParar" + index} className={styles.btnParar} onClick={handleBtnParar}>Parar</button>
+                        <button id={"btnGravar" + index} className={styles.btnGravar} onClick={handleBtnGravar} type="submit">Gravar</button>
                         
                         
               </div>
