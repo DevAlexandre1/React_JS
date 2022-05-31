@@ -55,26 +55,126 @@ const Task = (props) => {
     //     console.log("Tarefa finalizada!")
     // }
    
-    const handleBtnIniciar =()=>{
+    // const handleBtnIniciar =()=>{
       
+      
+      const verificarBtn =()=>{
+        const btnIniciar = document.querySelector("#btnIniciar")   
+        const getValor = document.querySelectorAll("#div_task select")
+        
+        switch (btnIniciar){
+                    case btnIniciar[0]:
+                      //Set val task
+                      let valor = getValor[0] .value
+                      let valSelect = valor.options[valor.selectedIndex].text
+                      setTarefa0(valSelect)
+                      console.log(valSelect)
+
+                      //Set val empresa
+                      let valorEmp = getValor[1] .value
+                      let valSelectEmp = valorEmp.options[valorEmp.selectedIndex].text
+                      setTarefa0(valSelectEmp)
+                      console.log(valSelectEmp)
+                        
+
+                    break;
+        
+                    case btnIniciar[1]:
+                       //Set val task
+                       let valor1 = getValor[2] .value
+                       let valSelect1 = valor1.options[valor1.selectedIndex].text
+                       setTarefa0(valSelect1)
+                       console.log(valSelect1)
+ 
+                       //Set val empresa
+                       let valorEmp1 = getValor[3] .value
+                       let valSelectEmp1 = valorEmp1.options[valorEmp1.selectedIndex].text
+                       setTarefa0(valSelectEmp1)
+                       console.log(valSelectEmp1)
+                    break;
+        
+                    case btnIniciar[2]:
+                        //Set val task
+                      let valor2 = getValor[4] .value
+                      let valSelect2 = valor2.options[valor2.selectedIndex].text
+                      setTarefa0(valSelect2)
+
+                      //Set val empresa
+                      let valorEmp2 = getValor[5] .value
+                      let valSelectEmp2 = valorEmp2.options[valorEmp2.selectedIndex].text
+                      setTarefa0(valSelectEmp2)
+                    break;
+        
+                    case btnIniciar[3]:
+                        //Set val task
+                      let valor3 = getValor[6] .value
+                      let valSelect3 = valor3.options[valor3.selectedIndex].text
+                      setTarefa0(valSelect3)
+
+                      //Set val empresa
+                      let valorEmp3 = getValor[7] .value
+                      let valSelectEmp3 = valorEmp3.options[valorEmp3.selectedIndex].text
+                      setTarefa0(valSelectEmp3)
+                    break;
+        
+                    case btnIniciar[4]:
+                       //Set val task
+                       let valor4 = getValor[8] .value
+                       let valSelect4 = valor.options[valor4.selectedIndex].text
+                       setTarefa0(valSelect4)
+ 
+                       //Set val empresa
+                       let valorEmp4 = getValor[9] .value
+                       let valSelectEmp4 = valorEmp4.options[valorEmp4.selectedIndex].text
+                       setTarefa0(valSelectEmp4)
+                    break;
+        
+                    case btnIniciar[5]:
+                       //Set val task
+                       let valor5 = getValor[10] .value
+                       let valSelect5 = valor5.options[valor5.selectedIndex].text
+                       setTarefa0(valSelect5)
+ 
+                       //Set val empresa
+                       let valorEmp5 = getValor[11] .value
+                       let valSelectEmp5 = valorEmp5.options[valorEmp5.selectedIndex].text
+                       setTarefa0(valSelectEmp5)
+                    break;
+                    default:
+                      console.log("Case não funcionou")
+          
+
+        }
+
+      }
+    // }
       // const selectTarefa = document.querySelector("#tarefa")
       // let valor = selectTarefa.options[selectTarefa.selectedIndex].text
       // setTarefa0(valor)
       // console.log(tarefa0)
       
-      const getValor = document.querySelectorAll("#div_task select")
-      getValor.forEach(function(el,i){
-        
-        let valor = []
-        let valArray = el.options[el.selectedIndex].text
-        let valor1 = [...valor,valArray]
-        console.log("------------------------------------------")
-        console.log("a["+i+"]"+valArray)
-        console.log(valor1)
-        console.log("------------------------------------------")
-        
 
-      })
+
+      //###########################################################################
+      
+      
+      //Codigo importante - pega todos os selects
+      //const getValor = document.querySelectorAll("#div_task select")
+
+      // getValor.forEach(function(el,i){
+        
+      //   let valor = []
+      //   let valArray = el.options[el.selectedIndex].text
+      //   let valor1 = [...valor,valArray]
+      //   console.log("------------------------------------------")
+      //   console.log("a["+i+"]"+valArray)
+      //   console.log(valor1)
+      //   console.log("------------------------------------------")
+        
+    
+
+        //###########################################################################
+        
       // const select1 = document.querySelector("#tarefa[1]")
       // let valor1 = select.options[select.selectedIndex].text
       // setTarefa1(valor1)
@@ -129,7 +229,7 @@ const Task = (props) => {
             // console.log(tarefa3)
             // console.log(tarefa4)
             // console.log(tarefa5)
-     }
+     
     
 
         
@@ -152,6 +252,8 @@ const Task = (props) => {
 
     //         case btnIniciar[5]:
     //         break;
+                // default:
+                //   console.log("")
 
     //     }
     //     
@@ -171,7 +273,7 @@ const Task = (props) => {
         console.log("Gravou?",btnGravar)
     }
 
-
+  
   return (
     <div id='tarefa_container'  className={styles.container_task}>        
       {tarefas.map((task, index) => {
@@ -198,9 +300,10 @@ const Task = (props) => {
                         <span>Comentario:</span>
                         <textarea className={styles.comentario} name="comentario" id="comentario" cols="17" rows="2" ></textarea>
 
-                        <button id="btnIniciar" className={styles.btnIniciar} onClick={handleBtnIniciar}>Iniciar</button>
+                        <button id="btnIniciar" className={styles.btnIniciar} onClick={verificarBtn}>Iniciar</button>
                         <button id="btnParar"  className={styles.btnParar} onClick={handleBtnParar}>Parar</button>
                         <button id="btnGravar" className={styles.btnGravar} onClick={handleBtnGravar} type="submit">Gravar</button>
+                        
                         
               </div>
           );
