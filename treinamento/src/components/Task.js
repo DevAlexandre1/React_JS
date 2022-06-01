@@ -1,5 +1,8 @@
+import temporizador from "./Cronometro";
 import { useState } from "react"
+
 import styles from './Task.module.css'
+
 
 const Task = (props) => {
   const {tarefas} = props;
@@ -30,10 +33,44 @@ const Task = (props) => {
     const [comentario3, setComentario3] = useState()
     const [comentario4, setComentario4] = useState()
     const [comentario5, setComentario5] = useState()
+
+    //DATA TIME TAREFAS
+
+    const [data, setData]= useState()
+
+    const [horaInicial0, setHoraInicial0] = useState()
+    const [horaInicial1, setHoraInicial1] = useState()
+    const [horaInicial2, setHoraInicial2] = useState()
+    const [horaInicial3, setHoraInicial3] = useState()
+    const [horaInicial4, setHoraInicial4] = useState()
+    const [horaInicial5, setHoraInicial5] = useState()
     
-  
-      
-      
+    const [horaFinal0, setHoraFinal0] = useState()
+    const [horaFinal1, setHoraFinal1] = useState()
+    const [horaFinal2, setHoraFinal2] = useState()
+    const [horaFinal3, setHoraFinal3] = useState()
+    const [horaFinal4, setHoraFinal4] = useState()
+    const [horaFinal5, setHoraFinal5] = useState()
+
+    const [timeTarefa0, setTimeTarefa0] = useState()
+    const [timeTarefa1, setTimeTarefa1] = useState()
+    const [timeTarefa2, setTimeTarefa2] = useState()
+    const [timeTarefa3, setTimeTarefa3] = useState()
+    const [timeTarefa4, setTimeTarefa4] = useState()
+    const [timeTarefa5, setTimeTarefa5] = useState()
+
+
+    
+    
+    //data atual
+    const dataAtual = new Date().toLocaleDateString()
+
+    //hora atual
+    const horaInicio = new Date().toLocaleTimeString()
+ 
+    
+    
+
       const verificarBtn =(e)=>{
 
          //#### VERIFICAR QUANTIDADE DE TAREFAS 
@@ -62,7 +99,12 @@ const Task = (props) => {
                       let valorEmp = getValor[1]
                       let valSelectEmp = valorEmp.options[valorEmp.selectedIndex].text
                       setEmpresa0(valSelectEmp)
-                      console.log(empresa0)                        
+                      console.log(empresa0)    
+                      
+                      setData(dataAtual)
+                      console.log(data)
+
+                      
 
                     break;
         
@@ -78,6 +120,11 @@ const Task = (props) => {
                        let valSelectEmp1 = valorEmp1.options[valorEmp1.selectedIndex].text
                        setEmpresa1(valSelectEmp1)
                        console.log(empresa1)   
+
+                       setData(dataAtual)
+                       console.log(data)
+
+                       
                     break;
         
                     case (btnIniciar2):
@@ -92,6 +139,11 @@ const Task = (props) => {
                       let valSelectEmp2 = valorEmp2.options[valorEmp2.selectedIndex].text
                       setEmpresa2(valSelectEmp2)
                       console.log(empresa2)   
+
+                      setData(dataAtual)
+                      console.log(data)
+
+                      
                     break;
         
                     case (btnIniciar3):
@@ -106,6 +158,11 @@ const Task = (props) => {
                       let valSelectEmp3 = valorEmp3.options[valorEmp3.selectedIndex].text
                       setEmpresa3(valSelectEmp3)
                       console.log(empresa3)   
+
+                      setData(dataAtual)
+                      console.log(data)
+
+                      
                     break;
         
                     case (btnIniciar4):
@@ -119,7 +176,12 @@ const Task = (props) => {
                        let valorEmp4 = getValor[9]
                        let valSelectEmp4 = valorEmp4.options[valorEmp4.selectedIndex].text
                        setEmpresa4(valSelectEmp4)
-                       console.log(empresa4)   
+                       console.log(empresa4)  
+                       
+                       setData(dataAtual)
+                       console.log(data)
+
+                       
                     break;
         
                     case (btnIniciar5):
@@ -133,119 +195,18 @@ const Task = (props) => {
                        let valorEmp5 = getValor[11]
                        let valSelectEmp5 = valorEmp5.options[valorEmp5.selectedIndex].text
                        setEmpresa5(valSelectEmp5)
-                       console.log(empresa5)   
+                       console.log(empresa5)  
+                       
+                       setData(dataAtual)
+                       console.log(data)
+                       
                     break;
                     default:
                       console.log("Case não funcionou")
         }
         console.log(tarefa0)
     }
-    // }
-      // const selectTarefa = document.querySelector("#tarefa")
-      // let valor = selectTarefa.options[selectTarefa.selectedIndex].text
-      // setTarefa0(valor)
-      // console.log(tarefa0)
-      
-      //###########################################################################
-            
-      //Codigo importante - pega todos os selects
-      //const getValor = document.querySelectorAll("#div_task select")
-
-      // getValor.forEach(function(el,i){
-        
-      //   let valor = []
-      //   let valArray = el.options[el.selectedIndex].text
-      //   let valor1 = [...valor,valArray]
-      //   console.log("------------------------------------------")
-      //   console.log("a["+i+"]"+valArray)
-      //   console.log(valor1)
-      //   console.log("------------------------------------------")
-        
-    
-        //###########################################################################
-        
-      // const select1 = document.querySelector("#tarefa[1]")
-      // let valor1 = select.options[select.selectedIndex].text
-      // setTarefa1(valor1)
-      // console.log(tarefa1)
-      
-      // setBtnIniciar(!btnIniciar)
-        // console.log("Iniciou?",btnIniciar)
-        // console.log("Parou?",btnParar)
-        // console.log("Gravou?",btnGravar)
-
-        
-        // const handleTarefa =()=>{
-        //     // e.presentDefault();
-            
-        // const tarefasAll = document.querySelector("#tarefa")
-        
-
-  
-        // const retornoValTask = tarefa.forEach(function(el,i){
-        //    let value = tarefa[i]   
-        //    let select = value.options[value.selectedIndex].text 
-        //    setTarefa0(select) 
-        //    console.log(tarefa0)
-        // })
-
-        // function valtask =()
-
-        // let tarefa00 = tarefasAll[0].value
-        // let tarefa01 = tarefasAll[1].value
-        // let tarefa02 = tarefasAll[2].value
-        // let tarefa03 = tarefasAll[3].value
-        // let tarefa04 = tarefasAll[4].value
-        // let tarefa05 = tarefasAll[5].value
-    
-        //     const tarefasIn0 = tarefasAll[0].selectedIndex
-        //     const tarefasIn1 = tarefasAll[1].selectedIndex
-        //     const tarefasIn2 = tarefasAll[2].selectedIndex
-        //     const tarefasIn3 = tarefasAll[3].selectedIndex
-        //     const tarefasIn4 = tarefasAll[4].selectedIndex
-        //     const tarefasIn5 = tarefasAll[5].selectedIndex
-            
-            // setTarefa0(tarefasIn0)
-            // setTarefa1(tarefasIn1)
-            // setTarefa2(tarefasIn2)
-            // setTarefa3(tarefasIn3)
-            // setTarefa4(tarefasIn4)
-            // setTarefa5(tarefasIn5)
-            
-            // console.log(tarefa0)
-            // console.log(tarefa1)
-            // console.log(tarefa2)
-            // console.log(tarefa3)
-            // console.log(tarefa4)
-            // console.log(tarefa5)
-     
-    
-
-        
-    //     switch (btnIniciar){
-    //         case btnIniciar[0]:
-    //             setBtnIniciar();
-    //         break;
-
-    //         case btnIniciar[1]:
-    //         break;
-
-    //         case btnIniciar[2]:
-    //         break;
-
-    //         case btnIniciar[3]:
-    //         break;
-
-    //         case btnIniciar[4]:
-    //         break;
-
-    //         case btnIniciar[5]:
-    //         break;
-                // default:
-                //   console.log("")
-
-    //     }
-    //     
+   
 
     const handleBtnParar =()=>{
         setBtnParar(!btnParar)
@@ -263,6 +224,7 @@ const Task = (props) => {
     }
 
   
+
   return (
     <div id='tarefa_container'  className={styles.container_task}>        
       {tarefas.map((task, index) => {
@@ -292,11 +254,19 @@ const Task = (props) => {
                         <button id={"btnIniciar" + index} className={styles.btnIniciar} onClick={verificarBtn}>Iniciar</button>
                         <button id={"btnParar" + index} className={styles.btnParar} onClick={handleBtnParar}>Parar</button>
                         <button id={"btnGravar" + index} className={styles.btnGravar} onClick={handleBtnGravar} type="submit">Gravar</button>
+                        <p>{dataAtual}</p>
+                        <p>{horaInicio}</p>
+                        <div>
+                          <temporizador/>
+                        </div>
                         
                         
               </div>
+              
           );
+          
       })}
+      
     </div>
   );
 }
