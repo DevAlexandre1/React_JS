@@ -1,6 +1,4 @@
-import temporizador from "./Cronometro";
-import { useState, useEffect } from "react"
-
+import { useState} from "react"
 import styles from './Task.module.css'
 
 
@@ -59,8 +57,138 @@ const Task = (props) => {
     const [timeTarefa4, setTimeTarefa4] = useState()
     const [timeTarefa5, setTimeTarefa5] = useState()
 
-
-  
+ 
+      //CRONOMETRO
+      const Cronometro = () => {
+        var hh = 0;
+        var mm = 0;
+        var ss = 0;
+        
+        var tempo = 1000;//Quantos milésimos valem 1 segundo?
+        var cron0;
+        var cron1;
+        var cron2;
+        var cron3;
+        var cron4;
+        var cron5;
+        
+        //Inicia o temporizador
+        function start0() {
+            cron0 = setInterval(() => { timer(); }, tempo);
+        }
+            function start1() {
+            cron1 = setInterval(() => { timer(); }, tempo);
+        }
+          function start2() {
+            cron2 = setInterval(() => { timer(); }, tempo);
+        } 
+          function start3() {           
+            cron3 = setInterval(() => { timer(); }, tempo);
+        }    
+            function start4() {
+            cron4 = setInterval(() => { timer(); }, tempo);
+        } 
+            function start5() {
+            cron5 = setInterval(() => { timer(); }, tempo);
+        }
+        
+        //Para o temporizador mas não limpa as variáveis
+        function pause0() {
+          clearInterval(cron0);
+        }
+        function pause1() {
+          clearInterval(cron1);
+        }
+        function pause2() {
+          clearInterval(cron2);
+        }
+        function pause3() {
+          clearInterval(cron3);
+        }
+        function pause4() {
+          clearInterval(cron4);
+        }
+        function pause5() {
+          clearInterval(cron5);
+        }
+        
+        //Para o temporizador e limpa as variáveis
+        function stop0() {
+          clearInterval(cron0);
+            hh = 0;
+            mm = 0;
+            ss = 0;
+        }
+        function stop1() {
+          clearInterval(cron1);
+          hh = 0;
+          mm = 0;
+          ss = 0;
+        }
+        function stop2() {
+          clearInterval(cron2);
+          hh = 0;
+          mm = 0;
+          ss = 0;
+        }
+        function stop3() {
+          clearInterval(cron3);
+          hh = 0;
+          mm = 0;
+          ss = 0;
+        }
+        function stop4() {
+          clearInterval(cron4);
+          hh = 0;
+          mm = 0;
+          ss = 0;
+        }
+        function stop5() {
+          clearInterval(cron5);
+          hh = 0;
+          mm = 0;
+          ss = 0;
+        }
+          
+        
+            document.getElementById('cronometro0').innerText = '00:00:00';
+            document.getElementById('cronometro1').innerText = '00:00:00';
+            document.getElementById('cronometro2').innerText = '00:00:00';
+            document.getElementById('cronometro3').innerText = '00:00:00';
+            document.getElementById('cronometro4').innerText = '00:00:00';
+            document.getElementById('cronometro5').innerText = '00:00:00';
+        
+        
+        
+        //Faz a contagem do tempo e exibição
+        function timer() {
+            ss++; //Incrementa +1 na variável ss
+        
+            if (ss == 59) { //Verifica se deu 59 segundos
+                ss = 0; //Volta os segundos para 0
+                mm++; //Adiciona +1 na variável mm
+        
+                if (mm == 59) { //Verifica se deu 59 minutos
+                    mm = 0;//Volta os minutos para 0
+                    hh++;//Adiciona +1 na variável hora
+                }
+            }
+        
+            //Cria uma variável com o valor tratado HH:MM:SS
+            var format = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss);
+            
+            //Insere o valor tratado no elemento counter
+            document.getElementById('cronometro0').innerText = format;
+            document.getElementById('cronometro1').innerText = format;
+            document.getElementById('cronometro2').innerText = format;
+            document.getElementById('cronometro3').innerText = format;
+            document.getElementById('cronometro4').innerText = format;
+            document.getElementById('cronometro5').innerText = format;
+        
+            //Retorna o valor tratado
+            return format;
+        }
+      }
      //DATA ATUAL
     const dataAtual = new Date().toLocaleDateString()
 
@@ -74,6 +202,7 @@ const Task = (props) => {
          //#### VERIFICAR QUANTIDADE DE TAREFAS 
         // const quantidadeTarefas = document.querySelectorAll("#tarefa_container div")
         // const qtdTask = quantidadeTarefas.length  
+     
 
         const getValor = document.querySelectorAll("#div_task select")
 
@@ -84,6 +213,11 @@ const Task = (props) => {
         const btnIniciar4 = "btnIniciar4"
         const btnIniciar5 = "btnIniciar5"
         
+
+        //teste
+        // const cronometro = document.querySelector("#cronometro0")
+        // cronometro.innerHTML = "oii"
+
         const btnVerification = (e.target.id)        
         
           switch (btnVerification){
@@ -93,6 +227,7 @@ const Task = (props) => {
                       let valor = getValor[0]
                       let valSelect = valor.options[valor.selectedIndex].text
                       setTarefa0(valSelect)
+                      console.log(tarefa0)
                       
                       let valorEmp = getValor[1]
                       let valSelectEmp = valorEmp.options[valorEmp.selectedIndex].text
@@ -103,6 +238,8 @@ const Task = (props) => {
                       console.log(data)
 
                       setHoraInicial0(horaInicio)
+                      console.log(horaInicial0)
+                    
 
                     break;
         
@@ -202,16 +339,73 @@ const Task = (props) => {
                     default:
                       console.log("Case não funcionou")
         }
-        console.log(tarefa0)
+        
     }
    
       //BOTAO PARAR
     const handleBtnParar =(e)=>{
-        setBtnParar(!btnParar)
+           //#### VERIFICAR QUANTIDADE DE TAREFAS 
+        // const quantidadeTarefas = document.querySelectorAll("#tarefa_container div")
+        // const qtdTask = quantidadeTarefas.length  
+
+        const getValor = document.querySelectorAll("#div_task select")
+
+        const btnParar0 = "btnParar0"
+        const btnParar1 = "btnParar1"
+        const btnParar2 = "btnParar2"
+        const btnParar3 = "btnParar3"
+        const btnParar4 = "btnParar4"
+        const btnParar5 = "btnParar5"
         
-        console.log("Iniciou?",btnIniciar)
-        console.log("Parou?",btnParar)
-        console.log("Gravou?",btnGravar)
+
+        //teste
+        // const cronometro = document.querySelector("#cronometro0")
+        // cronometro.innerHTML = "oii"
+
+        const btnVerification = (e.target.id)        
+        
+          switch (btnVerification){
+                    
+                    case (btnParar0): 
+                                     
+                     
+                      setHoraInicial0(horaInicio)
+                      console.log(horaInicial0)
+                    
+
+                    break;
+        
+                    case (btnParar1):
+                     
+                       
+                    break;
+        
+                    case (btnParar2):
+                   
+
+                      
+                    break;
+        
+                    case (btnParar3):
+                    
+                      
+                    break;
+        
+                    case (btnParar4):
+                    
+
+                       
+                    break;
+        
+                    case (btnParar5):
+                    
+                       
+                    break;
+                    default:
+                      console.log("Case não funcionou")
+        }
+        
+    
     }
 
        //BOTAO GRAVAR 
@@ -224,7 +418,7 @@ const Task = (props) => {
     }
 
   
-
+  
   return (
     <div id='tarefa_container'  className={styles.container_task}>        
       {tarefas.map((task, index) => {
@@ -256,10 +450,8 @@ const Task = (props) => {
                         <button id={"btnGravar" + index} className={styles.btnGravar} onClick={handleBtnGravar} type="submit">Gravar</button>
                         
                         <p>{dataAtual}</p>
-                        
-                        <div>
-                          <temporizador/>
-                        </div>
+                        <h1 id={"cronometro" + index}>00:00:00</h1>
+                      
                         
                         
               </div>
