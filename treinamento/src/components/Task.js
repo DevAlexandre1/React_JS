@@ -1,5 +1,5 @@
 import temporizador from "./Cronometro";
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 import styles from './Task.module.css'
 
@@ -7,12 +7,12 @@ import styles from './Task.module.css'
 const Task = (props) => {
   const {tarefas} = props;
   
-  //Botoes
+    //BOTOES
   const [btnIniciar, setBtnIniciar] = useState(true);
   const [btnParar, setBtnParar] = useState(true);
   const [btnGravar, setBtnGravar] = useState(true);
   
-  //Dados tarefas
+    //DADOS TAREFAS
     const [tarefa0,setTarefa0] = useState()
     const [tarefa1,setTarefa1] = useState()
     const [tarefa2,setTarefa2] = useState()
@@ -34,10 +34,10 @@ const Task = (props) => {
     const [comentario4, setComentario4] = useState()
     const [comentario5, setComentario5] = useState()
 
-    //DATA TIME TAREFAS
-
+      //DATA TIME TAREFAS
     const [data, setData]= useState()
 
+   
     const [horaInicial0, setHoraInicial0] = useState()
     const [horaInicial1, setHoraInicial1] = useState()
     const [horaInicial2, setHoraInicial2] = useState()
@@ -60,22 +60,21 @@ const Task = (props) => {
     const [timeTarefa5, setTimeTarefa5] = useState()
 
 
-    
-    
-    //data atual
+  
+     //DATA ATUAL
     const dataAtual = new Date().toLocaleDateString()
 
-    //hora atual
+      //HORA ATUAL
     const horaInicio = new Date().toLocaleTimeString()
- 
     
     
-
-      const verificarBtn =(e)=>{
+      //BOTAO INICIO
+      const handleIniciar =(e)=>{
 
          //#### VERIFICAR QUANTIDADE DE TAREFAS 
         // const quantidadeTarefas = document.querySelectorAll("#tarefa_container div")
-        // const qtdTask = quantidadeTarefas.length           
+        // const qtdTask = quantidadeTarefas.length  
+
         const getValor = document.querySelectorAll("#div_task select")
 
         const btnIniciar0 = "btnIniciar0"
@@ -85,8 +84,7 @@ const Task = (props) => {
         const btnIniciar4 = "btnIniciar4"
         const btnIniciar5 = "btnIniciar5"
         
-        const btnVerification = (e.target.id)
-        
+        const btnVerification = (e.target.id)        
         
           switch (btnVerification){
                     
@@ -104,7 +102,7 @@ const Task = (props) => {
                       setData(dataAtual)
                       console.log(data)
 
-                      
+                      setHoraInicial0(horaInicio)
 
                     break;
         
@@ -207,15 +205,17 @@ const Task = (props) => {
         console.log(tarefa0)
     }
    
-
-    const handleBtnParar =()=>{
+      //BOTAO PARAR
+    const handleBtnParar =(e)=>{
         setBtnParar(!btnParar)
         
         console.log("Iniciou?",btnIniciar)
         console.log("Parou?",btnParar)
         console.log("Gravou?",btnGravar)
     }
-    const handleBtnGravar =()=>{
+
+       //BOTAO GRAVAR 
+    const handleBtnGravar =(e)=>{
         setBtnGravar(!btnGravar)
         
         console.log("Iniciou?",btnIniciar)
@@ -251,11 +251,12 @@ const Task = (props) => {
                         <span>Comentario:</span>
                         <textarea className={styles.comentario} name="comentario" id="comentario" cols="17" rows="2" ></textarea>
 
-                        <button id={"btnIniciar" + index} className={styles.btnIniciar} onClick={verificarBtn}>Iniciar</button>
+                        <button id={"btnIniciar" + index} className={styles.btnIniciar} onClick={handleIniciar}>Iniciar</button>
                         <button id={"btnParar" + index} className={styles.btnParar} onClick={handleBtnParar}>Parar</button>
                         <button id={"btnGravar" + index} className={styles.btnGravar} onClick={handleBtnGravar} type="submit">Gravar</button>
+                        
                         <p>{dataAtual}</p>
-                        <p>{horaInicio}</p>
+                        
                         <div>
                           <temporizador/>
                         </div>
