@@ -31,121 +31,106 @@ const Task = (props) => {
     const [comentario4, setComentario4] = useState()
     const [comentario5, setComentario5] = useState()
     
-    //filhos de tarefa_container
-    
-    // const tarefa00 = document.querySelector("")
-
-    
-    // const handleEmpresa =(e)=>{
-    //     // e.presentDefault();
-    //     setEmpresa0(e.target[0].value)
-    //     console.log(empresa0)
-    // }
-
-    // const handleComentario =(e)=>{
-    //     // e.presentDefault();
-    //     setComentario0(e.target.value)
-    //     console.log(comentario0)
-    // }
-
-    // const res =()=>{
-       
-    //     console.log("Tarefa finalizada!")
-    // }
-   
-    // const handleBtnIniciar =()=>{
+  
       
       
-      const verificarBtn =()=>{
+      const verificarBtn =(e)=>{
+
         const quantidadeTarefas = document.querySelectorAll("#tarefa_container div")
-        const qtdTask = quantidadeTarefas.length
-        const container_tarefa = document.querySelector("#div_task")
-        const btnIniciar = container_tarefa.querySelectorAll("button")   
+        const qtdTask = quantidadeTarefas.length           
         const getValor = document.querySelectorAll("#div_task select")
-        
-        for(let i = 0; i < qtdTask;i++){
-        let btn = (btnIniciar+i)
-          switch (btn){
-                    case (btn + 0):
-                      //Set val task
-                      let valor = getValor[0] .value
-                      let valSelect = valor.options[valor.selectedIndex].text
-                      setTarefa0(valSelect)
-                      console.log(valSelect)
 
-                      //Set val empresa
-                      let valorEmp = getValor[1] .value
-                      let valSelectEmp = valorEmp.options[valorEmp.selectedIndex].text
-                      setTarefa0(valSelectEmp)
-                      console.log(valSelectEmp)                        
+        const btnIniciar0 = "btnIniciar0"
+        const btnIniciar1 = "btnIniciar1"
+        const btnIniciar2 = "btnIniciar2"
+        const btnIniciar3 = "btnIniciar3"
+        const btnIniciar4 = "btnIniciar4"
+        const btnIniciar5 = "btnIniciar5"
+        
+        const btnVerification = (e.target.id)
+        console.log(btnVerification)
+        
+          switch (btnVerification){
+                    
+                    case (btnIniciar0):
+                      console.log("ENTROU NO CASE 1")
+                      // let valor = getValor[0] .value
+                      // let valSelect = valor.options[valor.selectedIndex].text
+                      // setTarefa0(valSelect)
+                      // console.log(tarefa0)
+
+                      
+                      // let valorEmp = getValor[1] .value
+                      // let valSelectEmp = valorEmp.options[valorEmp.selectedIndex].text
+                      // setEmpresa0(valSelectEmp)
+                      // console.log(empresa0)                        
 
                     break;
         
-                    case (btn + 1):
+                    case (btnIniciar1):
                        //Set val task
                        let valor1 = getValor[2] .value
                        let valSelect1 = valor1.options[valor1.selectedIndex].text
-                       setTarefa0(valSelect1)
+                       setTarefa1(valSelect1)
                        console.log(valSelect1)
  
                        //Set val empresa
                        let valorEmp1 = getValor[3] .value
                        let valSelectEmp1 = valorEmp1.options[valorEmp1.selectedIndex].text
-                       setTarefa0(valSelectEmp1)
+                       setEmpresa1(valSelectEmp1)
                        console.log(valSelectEmp1)
                     break;
         
-                    case (btn + 2):
+                    case (btnIniciar2):
                         //Set val task
                       let valor2 = getValor[4] .value
                       let valSelect2 = valor2.options[valor2.selectedIndex].text
-                      setTarefa0(valSelect2)
+                      setTarefa2(valSelect2)
 
                       //Set val empresa
                       let valorEmp2 = getValor[5] .value
                       let valSelectEmp2 = valorEmp2.options[valorEmp2.selectedIndex].text
-                      setTarefa0(valSelectEmp2)
+                      setEmpresa2(valSelectEmp2)
                     break;
         
-                    case (btn + 3):
+                    case (btnIniciar3):
                         //Set val task
                       let valor3 = getValor[6] .value
                       let valSelect3 = valor3.options[valor3.selectedIndex].text
-                      setTarefa0(valSelect3)
+                      setTarefa3(valSelect3)
 
                       //Set val empresa
                       let valorEmp3 = getValor[7] .value
                       let valSelectEmp3 = valorEmp3.options[valorEmp3.selectedIndex].text
-                      setTarefa0(valSelectEmp3)
+                      setEmpresa3(valSelectEmp3)
                     break;
         
-                    case (btn + 4):
+                    case (btnIniciar4):
                        //Set val task
                        let valor4 = getValor[8] .value
-                       let valSelect4 = valor.options[valor4.selectedIndex].text
-                       setTarefa0(valSelect4)
+                       let valSelect4 = valor4.options[valor4.selectedIndex].text
+                       setTarefa4(valSelect4)
  
                        //Set val empresa
                        let valorEmp4 = getValor[9] .value
                        let valSelectEmp4 = valorEmp4.options[valorEmp4.selectedIndex].text
-                       setTarefa0(valSelectEmp4)
+                       setEmpresa4(valSelectEmp4)
                     break;
         
-                    case (btn + 5):
+                    case (btnIniciar5):
                        //Set val task
                        let valor5 = getValor[10] .value
                        let valSelect5 = valor5.options[valor5.selectedIndex].text
-                       setTarefa0(valSelect5)
+                       setTarefa5(valSelect5)
  
                        //Set val empresa
                        let valorEmp5 = getValor[11] .value
                        let valSelectEmp5 = valorEmp5.options[valorEmp5.selectedIndex].text
-                       setTarefa0(valSelectEmp5)
+                       setEmpresa5(valSelectEmp5)
                     break;
                     default:
                       console.log("Case não funcionou")
         }
-      }
     }
     // }
       // const selectTarefa = document.querySelector("#tarefa")
