@@ -1,6 +1,6 @@
 import { useState} from "react"
 import styles from './Task.module.css'
-import Cronometro from './Cronometro'
+
 
 
 const Task = (props) => {

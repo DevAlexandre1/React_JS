@@ -1,4 +1,4 @@
-import {Children, useState} from 'react' 
+import {useState} from 'react' 
 
 import styles from './Rodape.module.css'
 import Task from './Task'
@@ -23,6 +23,7 @@ const addTask=()=>{
       </div>
       <div>
         {<Task tarefas={task}/> }
+        
       </div>
 
     </div>
